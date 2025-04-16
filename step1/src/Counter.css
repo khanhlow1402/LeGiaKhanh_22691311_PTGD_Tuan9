@@ -1,0 +1,46 @@
+.counter {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    width: 220px;
+    background: #f9f9f9;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .counter h2 {
+    margin-bottom: 10px;
+  }
+  
+  .counter p {
+    font-size: 2rem;
+    margin: 10px 0;
+  }
+  
+  .counter button {
+    padding: 10px 20px;
+    margin: 0 5px;
+    font-size: 1.2rem;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+  
+  /* Nút trừ: đỏ */
+  .counter button:first-of-type {
+    background-color: #dc3545;
+  }
+  .counter button:first-of-type:hover {
+    background-color: #a71d2a;
+  }
+  
+  /* Nút cộng: xanh lá */
+  .counter button:last-of-type {
+    background-color: #28a745;
+  }
+  .counter button:last-of-type:hover {
+    background-color: #1e7e34;
+  }
+  
