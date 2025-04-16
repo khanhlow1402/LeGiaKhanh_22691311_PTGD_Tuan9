@@ -1,0 +1,30 @@
+.counter-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+  font-family: sans-serif;
+}
+
+.counter-value {
+  font-size: 48px;
+  margin: 20px 0;
+  color: #333;
+}
+
+.button-group button {
+  font-size: 24px;
+  width: 60px;
+  height: 60px;
+  margin: 0 10px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.button-group button:hover {
+  background-color: #388e3c;
+}
