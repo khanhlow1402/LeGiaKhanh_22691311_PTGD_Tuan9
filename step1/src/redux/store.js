@@ -1,10 +1,11 @@
-import { configureStore, combineReducers } from '@reduxjs/toolkit';
-import counterReducer from './counterReducer';
+import { configureStore } from "@reduxjs/toolkit";
+import { counterReducer } from "./counterActions";
+import toolkitReducer from "./counterSlice";
 
-const rootReducer = combineReducers({
-  count: counterReducer,
-
+export const store = configureStore({
+  reducer: {
+    count: counterReducer,         // cho Redux thường
+    toolkitCount: toolkitReducer,  // cho Redux Toolkit
+  },
 });
-
-const store = configureStore({ reducer: rootReducer });
 export default store;
