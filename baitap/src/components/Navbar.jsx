@@ -1,11 +1,7 @@
+// components/Navbar.jsx
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { toggleTheme } from "../redux/themeSlice";
 
 export default function Navbar({ active, onChange }) {
-  const dispatch = useDispatch();
-  const theme = useSelector((state) => state.theme);
-
   return (
     <nav className="flex flex-wrap gap-4 mb-6 justify-center items-center">
       <button
@@ -28,16 +24,15 @@ export default function Navbar({ active, onChange }) {
       >
         To-do List
       </button>
-
       <button
-        onClick={() => dispatch(toggleTheme())}
+        onClick={() => onChange("cart")}
         className={`px-4 py-2 rounded-md font-semibold transition ${
-          theme === "dark"
-            ? "bg-gray-800 text-white"
-            : "bg-yellow-300 text-black"
+          active === "cart"
+            ? "bg-pink-600 text-white"
+            : "bg-gray-200 hover:bg-gray-300"
         }`}
       >
-        Toggle Theme
+        Cart
       </button>
     </nav>
   );
