@@ -1,19 +1,23 @@
 import React, { useState } from "react";
-import Counter from "./components/Counter";
-import TodoList from "./components/TodoList";
 import Navbar from "./components/Navbar";
+import Counter from "./components/Counter";
+import TodoApp from "./components/TodoList";
 import "./App.css";
+import { useSelector } from "react-redux";
 
-function App() {
-  const [view, setView] = useState("counter");
+export default function App() {
+  const [active, setActive] = useState("counter");
+  const theme = useSelector((state) => state.theme);
 
   return (
-    <div className="app">
-      <Navbar active={view} onChange={setView} />
-      {view === "counter" && <Counter />}
-      {view === "todo" && <TodoList />}
+    <div
+      className={`min-h-screen px-4 py-8 ${
+        theme === "dark" ? "bg-gray-900 text-white" : "bg-gray-100 text-black"
+      }`}
+    >
+      <Navbar active={active} onChange={setActive} />
+      {active === "counter" && <Counter />}
+      {active === "todo" && <TodoApp />}
     </div>
   );
 }
-
-export default App;
