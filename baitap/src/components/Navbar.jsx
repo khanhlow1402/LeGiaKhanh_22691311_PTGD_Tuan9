@@ -4,8 +4,12 @@ import React from "react";
 export default function Navbar({ active, onChange }) {
   return (
     <nav className="flex flex-wrap gap-4 mb-6 justify-center items-center">
+      {/* Button for Counter */}
       <button
-        onClick={() => onChange("counter")}
+        onClick={() => {
+          console.log("Changing to counter"); // Thêm dòng này
+          onChange("counter");
+        }}
         className={`px-4 py-2 rounded-md font-semibold transition ${
           active === "counter"
             ? "bg-blue-600 text-white"
@@ -14,6 +18,7 @@ export default function Navbar({ active, onChange }) {
       >
         Counter
       </button>
+      {/* Button for Todo List */}
       <button
         onClick={() => onChange("todo")}
         className={`px-4 py-2 rounded-md font-semibold transition ${
@@ -24,6 +29,7 @@ export default function Navbar({ active, onChange }) {
       >
         To-do List
       </button>
+      {/* Button for Cart */}
       <button
         onClick={() => onChange("cart")}
         className={`px-4 py-2 rounded-md font-semibold transition ${
