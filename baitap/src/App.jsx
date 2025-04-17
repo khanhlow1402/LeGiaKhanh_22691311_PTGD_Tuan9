@@ -1,12 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import Counter from "./components/Counter";
+import TodoList from "./components/TodoList";
+import Navbar from "./components/Navbar";
 import "./App.css";
 
-export default function App() {
+function App() {
+  const [view, setView] = useState("counter");
+
   return (
     <div className="app">
-      <h1>🧮 Counter App</h1>
-      <Counter />
+      <Navbar active={view} onChange={setView} />
+      {view === "counter" && <Counter />}
+      {view === "todo" && <TodoList />}
     </div>
   );
 }
+
+export default App;
